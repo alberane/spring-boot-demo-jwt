@@ -1,0 +1,160 @@
+type: collection.insomnia.rest/5.0
+name: Demo JWT
+meta:
+  id: wrk_eaec529d5db3430985bedf845eb889da
+  created: 1752526239196
+  modified: 1752526239196
+  description: ""
+collection:
+  - url: http://localhost:8080/api/auth/login
+    name: auth-login-admin
+    meta:
+      id: req_3504968159704353b58786279b4bcb0c
+      created: 1752526509410
+      modified: 1752530971422
+      isPrivate: false
+      description: ""
+      sortKey: -1752526509410
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "username": "admin",
+          "password": "adminpass"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: none
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/hello
+    name: api-hello
+    meta:
+      id: req_3d20c9982fa045d0a636f1a79ec6d813
+      created: 1752530695584
+      modified: 1752531612523
+      isPrivate: false
+      description: ""
+      sortKey: -1752530695584
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: none
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/auth/login
+    name: auth-login-user
+    meta:
+      id: req_1df364a697754459858d349473c59630
+      created: 1752530980137
+      modified: 1752530988636
+      isPrivate: false
+      description: ""
+      sortKey: -1752193563601.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "username": "user",
+          "password": "password"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: none
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/user/hello
+    name: auth-login-user-hello
+    meta:
+      id: req_ac1aa0d93b884197940539c7bfb4b772
+      created: 1752531030490
+      modified: 1752531603359
+      isPrivate: false
+      description: ""
+      sortKey: -1752027090697.25
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_1df364a697754459858d349473c59630',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/admin/hello
+    name: auth-login-admin-hello
+    meta:
+      id: req_2f2e9c5530364ce2a219f404d3933885
+      created: 1752531093924
+      modified: 1752531558156
+      isPrivate: false
+      description: ""
+      sortKey: -1752360036505.75
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_3504968159704353b58786279b4bcb0c',
+        'b64::JC50b2tlbg==::46b', 'always', 60 %}"
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_388e7b4386750b5fef0386fee2499f5e535d9448
+    created: 1752526239200
+    modified: 1752526239200
+environments:
+  name: Base Environment
+  meta:
+    id: env_388e7b4386750b5fef0386fee2499f5e535d9448
+    created: 1752526239198
+    modified: 1752526239198
+    isPrivate: false
