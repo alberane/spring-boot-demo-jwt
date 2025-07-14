@@ -3,12 +3,12 @@
     {
       "name": "jwt.expiration",
       "type": "java.lang.String",
-      "description": "A description for 'jwt.expiration'"
+      "description": "Tempo de expiração do token 'jwt.expiration'"
     },
     {
       "name": "jwt.secret",
       "type": "java.lang.String",
-      "description": "A description for 'jwt.secret'"
+      "description": "Chave secreta usada como seed de criptografia: 'jwt.secret'"
     }
   ]
 }
