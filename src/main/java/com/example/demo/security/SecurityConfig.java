@@ -27,6 +27,7 @@ public class SecurityConfig {
     this.userDetailsService = userDetailsService;
   }
 
+  @SuppressWarnings("removal")
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http
@@ -58,6 +59,7 @@ public class SecurityConfig {
     return http.build();
   }
 
+  @SuppressWarnings("deprecation")
   @Bean
   public AuthenticationProvider authenticationProvider() {
     DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();

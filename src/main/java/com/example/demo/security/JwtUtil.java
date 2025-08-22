@@ -33,6 +33,7 @@ public class JwtUtil {
     return createToken(claims, userDetails.getUsername());
   }
 
+  @SuppressWarnings("deprecation")
   private String createToken(Map<String, Object> claims, String subject) {
     return Jwts.builder()
         .setClaims(claims)
@@ -66,6 +67,7 @@ public class JwtUtil {
   }
 
   // Extrai todas as claims do token
+  @SuppressWarnings("deprecation")
   private Claims extractAllClaims(String token) {
     return Jwts
         .parser()
